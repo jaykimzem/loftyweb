@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /loftyweb/
+
+  # Route /api to the PHP Gateway API backend
+  RewriteRule ^api/(.*)$ api/index.php [L,QSA]
+  RewriteRule ^api$ api/index.php [L,QSA]
+</IfModule>
+

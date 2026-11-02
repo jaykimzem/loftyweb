@@ -1,0 +1,12 @@
+# Local configurations and secret keys
+api/config.local.php
+config.local.php
+*.local.php
+.env*
+!.env.example
+
+# Node / dependencies
+node_modules/
+.DS_Store
+*.log
+
