@@ -1,5 +1,5 @@
 /**
- * LOFTY SERVICES & CONSULTANTS LTD
+ * LOFTY SECURITY GROUP
  * Elite GSAP & Tactical Interaction Engine
  */
 
@@ -228,21 +228,21 @@ function initGSAPAnimations() {
       });
     }
 
-    // 4 Pillars Grid
-    const pillarItems = gsap.utils.toArray('.pillar-item');
-    if (pillarItems.length) {
-      ScrollTrigger.batch(pillarItems, {
-        start: 'top 85%',
-        onEnter: batch => {
-          gsap.from(batch, {
-            y: 40,
-            opacity: 0,
-            stagger: 0.14,
-            duration: 0.75,
-            ease: 'power3.out',
-            overwrite: true
-          });
-        }
+    // 4 Pillars Grid - Animate all 4 pillars cleanly on section enter
+    const pillarGrid = document.querySelector('.pillar-grid');
+    if (pillarGrid) {
+      gsap.from('.pillar-item', {
+        scrollTrigger: {
+          trigger: pillarGrid,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 35,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.75,
+        ease: 'power3.out',
+        clearProps: 'opacity,transform'
       });
     }
 
